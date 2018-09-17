@@ -1,29 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="large-3 small-12 column">
+  <%= image_tag @floor.poster %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @floor.name %>
-</p>
+<div class="large-9 small-12 column">
+  <h3>
+    <%= @floor0.title %>
+    (<%= @floor.release_year %>)
+    <%=link_to @floor.details do%>
+      <%=image_tag asset_path("detail_logo.png") %>
+    <% end %>
+  </h3>
+  <p class="label floor-label radius mb1">$ <%= @floor.price %></p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @floor.quantity %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @floor.price %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @floor.description %>
-</p>
-
-<p>
-  <strong>Photo url:</strong>
-  <%= @floor.photo_url %>
-</p>
-
-<%= link_to 'Edit', edit_floor_path(@floor) %> |
-<%= link_to 'Back', floors_path %>
+  <p><%= @floor.description %></p>
+</div>
