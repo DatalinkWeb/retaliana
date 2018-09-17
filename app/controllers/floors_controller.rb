@@ -10,6 +10,8 @@ class FloorsController < ApplicationController
   # GET /floors/1
   # GET /floors/1.json
   def show
+    @floor = Floor.find(params[:id])
+    @cart_action = @floor.cart_action current_user.try :id
   end
 
   # GET /floors/new
