@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     put 'add/:floor_id', to: 'carts#add', as: :add_to
     put 'remove/:floor_id', to: 'carts#remove', as: :remove_from
   end
-  root 'welcome#index'
+  root 'floors#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

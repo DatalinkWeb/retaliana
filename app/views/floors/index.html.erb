@@ -5,17 +5,17 @@
         <li class="large-3 medium-4 small-12 row">
             <div class="floor-card padly">
                 <%= link_to floor, class: "poster" do%>
-                    <%= image_tag floor.poster %>
+                    <%=image_tag floor.poster %>
                 <% end %>
                 <div class="floor-info ell glassy-bg padmy padlx">
                     <div class="title">
                         <h6>
-                            <%= floor.title %> <span>(<%= floor.release_year %>) </span>
+                            <%=floor.name %> <span>(<%=floor.quantity %>) </span>
                         </h6>
                     </div>
                         <p class="left price label floor-label radius">$ <%= floor.price %></p>
-                        <%= link_to floor.details, class: "right" do %>
-                            <%= image_tag asset_path("details_logo.png") %>
+                        <%=link_to floor.details, class: "right" do %>
+                            <%=image_tag asset_path("vendor-icon.png") %>
                         <% end %>
                 </div>
             </div>

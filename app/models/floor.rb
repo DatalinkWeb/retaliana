@@ -1,9 +1,17 @@
-class Floor < ApplicationRecord::Base
+class Floor < ActiveRecord::Base
     def poster
-        "https://www.connexion.gr/retaliana/#{poster_url}"
+        "#{photo_url}"
     end
 
     def details
-        "https://www.connexion.gr/retaliana/details.html"
+        "#{description}"
+    end
+
+    def cart_action(current_user_id)
+        if $redis.sismember "cart#{current_user_id}", id
+          "Remove from"
+        else
+          "Add to"
+        end
     end
 end

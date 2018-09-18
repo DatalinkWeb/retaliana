@@ -3,11 +3,11 @@ class CartsController < ApplicationController
 
   def show
     cart_ids = $redis.smembers current_user_cart
-    @cart_floors = Floor.find(carts_ids)
+    @cart_floors = Floor.find(cart_ids)
   end
 
   def add
-    $redis.sadd current_user_cart, params[floor_id]
+    $redis.sadd current_user_cart, params[:floor_id]
     render json: current_user.cart_count, status: 200
   end
 
